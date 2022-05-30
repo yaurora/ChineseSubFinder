@@ -40,7 +40,7 @@ RUN --mount=type=secret,id=BASEKEY \
     go build -ldflags="-s -w --extldflags '-static -fpic' -X main.AppVersion=${VERSION} -X main.BaseKey=$BASEKEY -X main.AESKey16=$AESKEY16 -X main.AESIv16=$AESIV16" -o /app/chinesesubfinder
 
 # 运行时环境
-FROM lsiobase/ubuntu:bionic
+FROM ubuntu:bionic
 
 ENV TZ=Asia/Shanghai PERMS=true \
     PUID=1026 PGID=100
